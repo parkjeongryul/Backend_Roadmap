@@ -1,0 +1,6 @@
+# Default : ignore all files in elasicsearch
+elasticsearch-7.8.1*
+
+# but do track tutorial
+!elasticsearch-7.8.1/tutorial/
+
