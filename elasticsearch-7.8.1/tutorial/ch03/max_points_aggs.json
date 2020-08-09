@@ -1,0 +1,10 @@
+{
+	"size" : 1,
+	"aggs" : {
+		"max_score" : {
+			"max" : {
+				"field" : "points"
+			}
+		}
+	}
+}
