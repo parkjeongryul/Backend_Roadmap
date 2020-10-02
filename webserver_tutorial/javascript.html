@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>javascript Document</title>
+    <script src="color.js"></script>
+  </head>
+  <body>
+    <a href="html.html"><h1>WEB</h1></a>
+    <a href="css.html"><h1>CSS</h1></a>
+    <a href="javascript.html"><h1>JavaScript</h1></a>
+
+    <input
+      type="button"
+      id="nightmode"
+      value="night"
+      onclick="
+        if(document.querySelector('#nightmode').value === 'night'){
+            Body.setColor('white');
+            Body.setBackgroundColor('black');
+            document.querySelector('#nightmode').value = 'day';
+            Link.setColor('powderblue');
+        }   
+        else{
+            Body.setColor('black');
+            Body.setBackgroundColor('white');
+            document.querySelector('#nightmode').value = 'night';
+            Link.setColor('blue');
+        }
+    "
+    />
+    <h1>JavaScript</h1>
+    <div>JavaScript often abbreviate as JS</div>
+  </body>
+</html>
