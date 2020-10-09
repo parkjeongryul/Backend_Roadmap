@@ -36,9 +36,13 @@
 
 ### HTML과 JS의 만남 : 이벤트
 
-- <input type = "button" value = "hi">
-- alert이라는 자바스크립트 코드를 넣고싶다.
-- <input type = "button" value = "hi" onclick= "alert('hi')">
+```
+<input type = "button" value = "hi">
+//alert이라는 자바스크립트 코드를 넣고싶다.
+
+<input type = "button" value = "hi" onclick= "alert('hi')">
+```
+
 - onclick 속성을 만나면 alert이라는 동작을 수행하는것을 대기하고 있다?(= event)
 - 몇가지 정해진 이벤트가 있다. 10 ~ 20개 정도
   - onchange 등
