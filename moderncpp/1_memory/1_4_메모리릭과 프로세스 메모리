@@ -1,0 +1,38 @@
+#### 학습 내용
+- memory leak 이 일어나면 안되는 이유
+- memory leak을 찾을 수 있는 tool
+- process view
+
+
+#### Memory leak
+- linux 에서 top 명령어로 모니터링하며, memory leak을 발생시켜보자.
+- memory 사용률이 폭등하다가 OS가 자동으로 kill 한다.
+- memory leak 이 있다면 프로그램이 언제 fail될 지 모르는 것
+- 따라서 safer c++ style로 대부분의 memory leak을 해결할 수 있다.
+- linux에서 보편적으로 memory leak 을 빨견하는 tool 은 valgrind 이다.
+
+
+#### valgrind
+- valgrind ./a.out 로 간단하게 memory leakdㅣ 어떻게 일어났는지 확인 가능
+```
+g++ -g leakHeap.cpp
+valgrind --leak-check=full ./a.out 
+```
+- 위와 같이 호출하면 memory leak 의 위치를 추적할 수 있다.
+
+#### Heap memory 도 process에서 어떻게 위치하고 있을까?
+
+```
+int sa=0;
+int sb=1;
+int * hap = new int;
+int * hbp = new int;
+
+delete hap;
+delete hbp;
+```
+
+- compiler가 reallocation을 해주기 떄문에 순서가 큰 의미가없다. (clang으로 컴파일하면, 다르게 나타난다)
+- 실제로는 process memory 내에서 할당을 받는 것이며, 위치가 좀 동떨어져 있다고 생각.
+- 또한 stack은 위에서 아래로 빡빡하게 빈틈없이 채워지는데 비해, heap은 밑에서 위로 듬성듬성 들어가게 된다.
+- 또한 heap은 deallocation 밑 allocation이 런타임에 이루어진다.

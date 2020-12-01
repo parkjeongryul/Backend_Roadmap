@@ -6,7 +6,7 @@
 
 ### debug 예제
 - g++ -g 라는 옵션을 주면 debug mode로 컴파일을 한다.
-- 공식 홈페이지를 보면 extra information이 들어가며 dwarf format 에 대해서 알아보자.
+- 공식 홈페이지를 보면 extra information이 들어가서 dwarf format 에 대해서 알아보자.
 - binary(machine code) - cpp source 연결해주는 info가 있다.
 - debug 모드에서는 최적화를 하게되면 위 연결이 일치하기 힘들어서 -Og (디버그용) 최적화 옵션을 넘겨주기도 한다.
 

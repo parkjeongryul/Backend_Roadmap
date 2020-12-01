@@ -1,13 +1,13 @@
 #### 모두 link와 관련된 내용
 - c++ static memory 관련 내용이 아니라 build 과정에 관여되는 static 에 대한 내용
 
-### extern이란?
+#### extern이란?
 - 바깥족에서 link를 찾아라
 
-### static이란?
+#### static이란?
 - 안쪽으로만 link를 열어라
 
-### variable 예제
+#### variable 예제
 main.cpp 에서 a = 0;
 foo.cpp 에서 a = 100;
 
@@ -15,15 +15,15 @@ foo.cpp 에서 a = 100;
 - 이 때 main.cpp 의 a에 extern 키워드로 정의를 하면 "바깥쪽 어딘가에 있어" 라는 뜻
 - a.out에서는 extern으로 가지고 있다 linking 되는 순간 foo.cpp의 a를 사용
 
-- static은 같은 translation unit(object 파일) 안에서만 사용할 수 있는것
+- static은 같은 translation unit(object 파일) 안에서만 사용할 수 있는 것(밖에서 못 찾도록)
 
-### function 예제
-- main.cpp 에서 foo() declaration, foo.cpp 에서 foo() definition 을 한다면 잘 동작하는 것을 볼 수있다.
+#### function 예제
+- main.cpp 에서 foo() declaration, foo.cpp 에서 foo() definition 을 한다면 잘 동작하는 것을 볼 수있다. (같이 링킹되었다는 가정)
 - 함수에 대해서는 default로 extern이 붙여있는 것!
 - static 함수는 마찬가지로 같은 translation unit (obj) 바깥으로 링크를 주지 않는 것!
 - 따라서 안전한 빌드 프로세스를 진행할 수 있다.
 
-### function 예제2
+#### function 예제2
 
 ```
 // cat.h
@@ -51,9 +51,9 @@ void Cat::speak(){
 
 ```
 
-- 위에서 bye()는 private한 함수 였지만, 어떤 멤버 variable도 접근하지 않기 때문에, free function으로 만들고 static 함수로 만든다면 cat.obj 파일에서만 사용이 가능하며, 이것이 일반적인 방법이다.
+- 위에서 bye()는 private한 함수 였지만, 어떤 멤버 variable도 접근하지 않기 때문에, free function(private이 아닌) 으로 만들고 static 함수로 만든다면 cat.obj 파일에서만 사용이 가능하며, 이것이 일반적인 방법이다.
 
-### extern "C" keyword
+#### extern "C" keyword
 
 ```
 int foo(double a){

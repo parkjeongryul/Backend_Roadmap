@@ -1,0 +1,5 @@
+#### intro
+- lvalue와 rvalue를 정확히 구분해야지 optimization된 code를 짤 수 있다.
+- copy 와 move의 차이를 알 수 있다.
+- Lvalue 를 Rvalue로 바꿔주는 move 함수 학습
+- Lvalue optimization 관련 RBO라는 개념 학습
