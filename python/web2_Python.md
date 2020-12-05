@@ -137,3 +137,28 @@ print(pageId)
 
 #### 따라서 CGI라는 것은 웹서버와 언어들 사이의 약속이다~~!
 
+### 조건문
+- 들여쓰기를 주의해야한다.
+- '세개 로닫으면 docstring이 된다. (그냥 달랑있으면 주석과 같음)
+- user_id = input('id?')
+```
+if 'id' == 'abc' :
+elif 'id' == 'abd' :
+else :
+
+```
+
+### 파일 생성 및 읽기
+- open(filename, r).read()
+- html만으로 만든페이지라면 html이 굉장히 많아질 것
+- 그에따라 중복되는 data가 굉장히 많을 것이다.
+- 따라서 data를 따로 file형식으로 만들면 중복을 제거할 수 있을 것 
+
+### list를 이용해서 파이썬 문서 이해
+- Library Reference : python이 갖고있는 각 기능들
+   - 어떤 data type 등
+   - 재사용하는 코드
+- Language Reference : python의 문법들
+
+### list
+- 
